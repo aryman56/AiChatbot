@@ -1,0 +1,108 @@
+@keyframes revealText {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  /* ChatBot.css */
+/* ChatBot.css */
+
+/* Chat container */
+.chat-container {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 400px; /* Set maximum height for scrolling */
+  }
+  
+  /* Message container */
+  .message-container {
+    margin-bottom: 10px;
+  }
+  
+  /* User message */
+  .user-message {
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  
+  /* Bot message */
+  .bot-message {
+    background-color: #ddeeff;
+    color: #333;
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  
+  /* Animation for message */
+  .user-message::before,
+  .bot-message::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: inherit;
+    border-radius: 50%;
+  }
+  
+  .user-message::before {
+    top: 50%;
+    left: -6px;
+    transform: translateY(-50%);
+  }
+  
+  .bot-message::before {
+    top: 50%;
+    right: -6px;
+    transform: translateY(-50%);
+  }
+  
+  /* Animation for hover effect */
+  .user-message:hover,
+  .bot-message:hover {
+    transform: scale(1.02); /* Scale up on hover */
+    transition: transform 0.2s ease;
+  }
+  
+  /* Animation for new message */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .user-message, .bot-message {
+    animation: fadeIn 0.3s ease forwards; /* Apply fade-in animation */
+  }
+  
+  /* Scrollbar styles */
+  .chat-container::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .chat-container::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+  }
+  .loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
